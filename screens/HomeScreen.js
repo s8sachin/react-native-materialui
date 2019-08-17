@@ -11,11 +11,38 @@ import {
 } from 'react-native';
 
 import { MonoText } from '../components/StyledText';
+import { Toolbar } from 'react-native-material-ui';
 
 export default function HomeScreen() {
   return (
     <View style={styles.container}>
       <ScrollView
+        style={styles.container}
+        contentContainerStyle={styles.contentContainer}>
+        <Toolbar
+          centerElement="Mysuru-Commute"
+          searchable={{
+            autoFocus: true,
+            placeholder: 'Search',
+          }}
+        />
+        <Toolbar
+          // leftElement="menu"
+          centerElement="Mysuru Commute"
+          searchable={{
+            autoFocus: true,
+            placeholder: 'Search',
+          }}
+          rightElement={{
+              menu: {
+                  icon: "more-vert",
+                  labels: ["item 1", "item 2"]
+              }
+          }}
+          onRightElementPress={ (label) => { console.log(label) }}
+        />
+      </ScrollView>
+      {/* <ScrollView
         style={styles.container}
         contentContainerStyle={styles.contentContainer}>
         <View style={styles.welcomeContainer}>
@@ -51,20 +78,7 @@ export default function HomeScreen() {
             </Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
-
-      <View style={styles.tabBarInfoContainer}>
-        <Text style={styles.tabBarInfoText}>
-          This is a tab bar. You can edit it in:
-        </Text>
-
-        <View
-          style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-          <MonoText style={styles.codeHighlightText}>
-            navigation/MainTabNavigator.js
-          </MonoText>
-        </View>
-      </View>
+      </ScrollView> */}
     </View>
   );
 }
