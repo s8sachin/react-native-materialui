@@ -66,12 +66,12 @@ export default class DynamicWidthTabBarExample extends React.Component {
   ) => (
     <TabBar
       {...props}
-      scrollEnabled
+      // scrollEnabled
       indicatorStyle={styles.indicator}
       style={styles.tabbar}
       labelStyle={styles.label}
-      tabStyle={styles.tabStyle}
-    />
+      // tabStyle={styles.tabStyle}
+      />
   );
 
   
@@ -89,7 +89,6 @@ export default class DynamicWidthTabBarExample extends React.Component {
         initialLayout={{ width: Dimensions.get('window').width }}
         renderTabBar={this.renderTabBar}
         appbarElevation={50}
-        style={{flex: 1}}
       />
     );
   }
@@ -98,8 +97,6 @@ export default class DynamicWidthTabBarExample extends React.Component {
 const styles = StyleSheet.create({
   tabbar: {
     backgroundColor: '#4CAF50',
-    width: '100%',
-    display: 'flex',
   },
   indicator: {
     backgroundColor: '#ffeb3b',
@@ -107,6 +104,7 @@ const styles = StyleSheet.create({
   label: {
     fontWeight: '400',
     width: '100%',
+    flex: 1
   },
   tabStyle: {
     width: 'auto',
